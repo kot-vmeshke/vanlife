@@ -1,0 +1,67 @@
+.about {
+  flex: 1 1 100%;
+}
+.aboutImgWrap {
+  width: 100%;
+  height: 234px;
+  overflow: hidden;
+}
+.aboutImgWrap img {
+  display: block;
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .aboutImgWrap {
+    height: 30vw;
+  }
+  .aboutImgWrap img {
+    width: 100%;
+  }
+}
+.aboutContentWrap {
+  padding: 48px 26px;
+}
+.aboutTitle {
+  margin-bottom: 32px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 38px;
+  color: #161616;
+}
+.aboutText {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}
+.aboutOfferWrap {
+  margin-top: 40px;
+  padding: 32px;
+  border-radius: 5px;
+  background: #ffcc8d;
+}
+.aboutOfferText {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  color: #161616;
+}
+.aboutOfferLink {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+  color: white;
+  background: #161616;
+}

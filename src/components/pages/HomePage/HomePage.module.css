@@ -1,0 +1,47 @@
+.home {
+  flex: 1 1 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.46) 0%,
+      rgba(0, 0, 0, 0.46) 100%
+    ),
+    url(images/main-bg.png) no-repeat center / cover;
+}
+
+.homeTitle {
+  margin-bottom: 26px;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 42px;
+  text-align: center;
+  color: #fff;
+}
+.homeSubtitle {
+  margin-bottom: 60px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+}
+.homeLink {
+  width: 100%;
+  max-width: 494px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  background: #ff8c38;
+}
