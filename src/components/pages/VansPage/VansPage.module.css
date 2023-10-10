@@ -1,0 +1,59 @@
+.vans {
+  flex: 1 1 100%;
+  padding: 54px 26px;
+  background: #fff7ed;
+}
+.vansContainer {
+  width: 100%;
+  max-width: 1022px;
+  margin: 0 auto;
+}
+.vansTitle {
+  margin-bottom: 22px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  color: #161616;
+}
+.vansControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 54px;
+  gap: 10px 20px;
+  list-style: none;
+}
+.vansFilter {
+  display: inline-block;
+  padding: 6px 26px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #4d4d4d;
+  background: #ffead0;
+}
+.vansClearFilter {
+  display: inline-block;
+  padding: 6px 26px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #4d4d4d;
+  text-decoration-line: underline;
+}
+.vansList {
+  --columns: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: 34px;
+}
+@media (min-width: 586px) {
+  .vansList {
+    --columns: 2;
+  }
+}
