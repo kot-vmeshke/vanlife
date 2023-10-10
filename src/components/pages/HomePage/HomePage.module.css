@@ -10,7 +10,7 @@
       rgba(0, 0, 0, 0.46) 0%,
       rgba(0, 0, 0, 0.46) 100%
     ),
-    url(images/main-bg.png) no-repeat center / cover;
+    url(/images/main-bg.png) no-repeat center / cover;
 }
 
 .homeTitle {

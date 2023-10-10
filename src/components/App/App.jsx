@@ -6,6 +6,8 @@ import { VansPage } from '../pages/VansPage/VansPage';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 
+import '../../server/server';
+
 import './App.css';
 
 const App = () => {
