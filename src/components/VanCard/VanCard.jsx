@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import styles from './VanCard.module.css';
-const VanCard = ({ name, type, price, imageUrl }) => {
+
+const VanCard = ({ name, type, price, imageUrl, id }) => {
   return (
-    <article className={styles.van}>
+    <Link to={`/vans/${id}`} className={styles.van}>
       <div className={styles.vanImgWrapper}>
         <img src={imageUrl} alt={name} />
       </div>
@@ -14,7 +16,7 @@ const VanCard = ({ name, type, price, imageUrl }) => {
           <small>/day</small>
         </span>
       </div>
-    </article>
+    </Link>
   );
 };
 export { VanCard };

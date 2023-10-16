@@ -26,8 +26,11 @@ const VansPage = () => {
           <li className={styles.vansClearFilter}>Clear filters</li>
         </ul>
         <div className={styles.vansList}>
-          {vansList.length &&
-            vansList.map((item) => <VanCard key={item.id} {...item} />)}
+          {vansList.length ? (
+            vansList.map((item) => <VanCard key={item.id} {...item} />)
+          ) : (
+            <p>Loading...</p>
+          )}
         </div>
       </div>
     </div>

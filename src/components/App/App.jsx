@@ -9,6 +9,7 @@ import { Footer } from '../Footer/Footer';
 import '../../server/server';
 
 import './App.css';
+import VanDetails from '../pages/VanDetails/VanDetails';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/vans" element={<VansPage />} />
+        <Route path="/vans/:id" element={<VanDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>
