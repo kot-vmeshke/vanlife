@@ -8,6 +8,9 @@ const Header = () => {
         #VANLIFE
       </Link>
       <nav className={styles.nav}>
+        <NavLink to="/host" className={styles.navLink}>
+          Host
+        </NavLink>
         <NavLink to="/about" className={styles.navLink}>
           About
         </NavLink>
