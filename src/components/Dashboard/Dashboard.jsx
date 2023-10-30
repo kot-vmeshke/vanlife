@@ -3,7 +3,7 @@ import styles from './Dashboard.module.css';
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className={styles.dashboard}>
       <div className={styles.welcome}>
         <div className={styles.container}>
           <h2 className={styles.welcomeTitle}>Welcome!</h2>

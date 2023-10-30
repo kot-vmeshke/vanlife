@@ -4,7 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const HostPage = () => {
   return (
-    <div>
+    <div className={styles.hostPage}>
       <nav className={styles.navContainer}>
         <ul className={styles.nav}>
           <li>

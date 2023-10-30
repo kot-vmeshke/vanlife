@@ -1,34 +1,35 @@
+import styles from './Income.module.css';
 
 const Income = () => {
   return (
-    <div>
-      <h2>Income</h2>
-      <p>
+    <div className={styles.income}>
+      <h2 className={styles.incomeTitle}>Income</h2>
+      <p className={styles.incomeTime}>
         Last <span>30 days</span>
       </p>
-      <p>$2,260</p>
-      <div>
+      <p className={styles.incomePrice}>$2,260</p>
+      <div className={styles.incomeChart}>
         <img src="/images/income-chart.svg" alt="" />
       </div>
       <div>
-        <div>
-          <h3>Your transactions (3)</h3>
-          <p>
+        <div className={styles.transactionsHeader}>
+          <h3 className={styles.incomeTitle}>Your transactions (3)</h3>
+          <p className={styles.incomeTime}>
             Last <span>30 days</span>
           </p>
         </div>
-        <div>
-          <div>
-            <p>$720</p>
-            <p>1/12/22</p>
+        <div className={styles.transactionsWrap}>
+          <div className={styles.transaction}>
+            <p className={styles.transactionPrice}>$720</p>
+            <p className={styles.transactionDate}>1/12/22</p>
           </div>
-          <div>
-            <p>$560</p>
-            <p>10/11/22</p>
+          <div className={styles.transaction}>
+            <p className={styles.transactionPrice}>$560</p>
+            <p className={styles.transactionDate}>10/11/22</p>
           </div>
-          <div>
-            <p>$980</p>
-            <p>23/11/22</p>
+          <div className={styles.transaction}>
+            <p className={styles.transactionPrice}>$980</p>
+            <p className={styles.transactionDate}>23/11/22</p>
           </div>
         </div>
       </div>
