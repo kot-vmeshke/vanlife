@@ -4,24 +4,32 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const HostPage = () => {
   return (
-    <div className={styles.container}>
-      <nav>
-        <ul>
+    <div>
+      <nav className={styles.navContainer}>
+        <ul className={styles.nav}>
           <li>
-            <NavLink to="/host">Dashboard</NavLink>
+            <NavLink to="/host" className={styles.navLink}>
+              Dashboard
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/host/income">Income</NavLink>
+            <NavLink to="/host/income" className={styles.navLink}>
+              Income
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/host/vans">Vans</NavLink>
+            <NavLink to="/host/vans" className={styles.navLink}>
+              Vans
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/host/reviews">Reviews</NavLink>
+            <NavLink to="/host/reviews" className={styles.navLink}>
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </nav>
-      <Outlet/>
+      <Outlet />
     </div>
   );
 };
