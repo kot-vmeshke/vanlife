@@ -1,0 +1,14 @@
+.smallDetails p {
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+  color: #161616;
+}
+.smallDetails p b {
+  font-weight: 700;
+}
+.smallDetails p:last-child {
+  margin-bottom: 0px;
+}

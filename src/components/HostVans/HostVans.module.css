@@ -1,0 +1,61 @@
+.vans {
+  flex: 1 1 100%;
+}
+.container {
+  padding: 26px;
+  width: 100%;
+  max-width: 1022px;
+  margin: 0 auto;
+}
+.header {
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  color: #161616;
+}
+.vansContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.vanCard {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 18px 24px;
+  border-radius: 6px;
+  background: #fff;
+}
+.vanImgWrap {
+  width: 66px;
+  height: 66px;
+  border-radius: 5px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.vanImgWrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.vanCardTitle {
+  margin-bottom: 4px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  color: #161616;
+}
+.vanCardPrice {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #4d4d4d;
+}

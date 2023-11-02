@@ -1,0 +1,85 @@
+.container {
+  padding: 26px;
+  width: 100%;
+  max-width: 1022px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 34px;
+  color: #161616;
+}
+.time {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #4d4d4d;
+}
+.time span {
+  font-weight: 700;
+  text-decoration-line: underline;
+}
+.ratingImageWrap {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 36px;
+}
+.ratingImageWrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.reviewsTitle {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 23px;
+  color: #161616;
+}
+.review {
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #c7c7c7;
+}
+.reviewStars {
+  margin-bottom: 8px;
+}
+.reviewAuthor {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.reviewAuthorName {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  color: #161616;
+}
+.reviewDate {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 32px;
+  color: #8c8c8c;
+}
+.reviewText {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  color: #161616;
+}

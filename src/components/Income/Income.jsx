@@ -13,7 +13,7 @@ const Income = () => {
       </div>
       <div>
         <div className={styles.transactionsHeader}>
-          <h3 className={styles.incomeTitle}>Your transactions (3)</h3>
+          <h3 className={styles.incomeSubtitle}>Your transactions (3)</h3>
           <p className={styles.incomeTime}>
             Last <span>30 days</span>
           </p>
