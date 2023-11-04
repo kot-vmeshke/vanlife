@@ -10,7 +10,6 @@ const Header = () => {
       <nav className={styles.nav}>
         <NavLink
           to="/host"
-          end
           className={({ isActive }) =>
             isActive
               ? `${styles.navLink} ${styles.navLinkActive}`

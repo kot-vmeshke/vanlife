@@ -51,8 +51,8 @@
   font-style: normal;
   font-weight: 600;
   line-height: 26px;
-  background: #e17654;
   color: #ffead0;
+  text-transform: capitalize;
 }
 .vanName {
   margin-bottom: 2px;
@@ -117,4 +117,13 @@
 .navLinkActive::after {
   width: 100%;
   background-color: #161616;
+}
+.simple {
+  background: #e17654;
+}
+.rugged {
+  background: #115e59;
+}
+.luxury {
+  background: #161616;
 }

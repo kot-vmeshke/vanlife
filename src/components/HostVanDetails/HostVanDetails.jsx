@@ -1,8 +1,18 @@
 import { Link, NavLink, Outlet, useParams } from 'react-router-dom';
-import styles from './HostVanDetails.module.css'
+import { useState, useEffect } from 'react';
+import styles from './HostVanDetails.module.css';
 const HostVanDetails = () => {
   const { id } = useParams();
-  console.log(id);
+  const [vanData, setVanData] = useState({});
+
+  useEffect(() => {
+    fetch(`/api/vans/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setVanData(data.vans);
+      });
+  }, [id]);
+
   return (
     <div>
       <div className={styles.container}>
@@ -20,59 +30,66 @@ const HostVanDetails = () => {
           </svg>
           Back to all vans
         </Link>
-        <div className={styles.wrapper}>
-          <div className={styles.header}>
-            <div className={styles.headerImgWrap}>
-              <img src="/images/modest-explorer.png" alt="" />
+        {vanData ? (
+          <div className={styles.wrapper}>
+            <div className={styles.header}>
+              <div className={styles.headerImgWrap}>
+                <img src={vanData.imageUrl} alt="" />
+              </div>
+              <div>
+                <span className={`${styles.type} ${styles[vanData.type]}`}>
+                  {vanData.type}
+                </span>
+                <h2 className={styles.vanName}>{vanData.name}</h2>
+                <p className={styles.vanPrice}>
+                  ${vanData.price}
+                  <small>/day</small>
+                </p>
+              </div>
             </div>
-            <div>
-              <span className={styles.type}>Simple</span>
-              <h2 className={styles.vanName}>Modest Explorer</h2>
-              <p className={styles.vanPrice}>
-                $60<small>/day</small>
-              </p>
-            </div>
+            <nav>
+              <ul className={styles.nav}>
+                <li>
+                  <NavLink
+                    to={`/host/vans/${id}`}
+                    end
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.navLink} ${styles.navLinkActive}`
+                        : styles.navLink
+                    }>
+                    Details
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`/host/vans/${id}/pricing`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.navLink} ${styles.navLinkActive}`
+                        : styles.navLink
+                    }>
+                    Pricing
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink
+                    to={`/host/vans/${id}/photos`}
+                    className={({ isActive }) =>
+                      isActive
+                        ? `${styles.navLink} ${styles.navLinkActive}`
+                        : styles.navLink
+                    }>
+                    Photos
+                  </NavLink>
+                </li>
+              </ul>
+            </nav>
+            <Outlet context={[vanData]}/>
           </div>
-          <nav>
-            <ul className={styles.nav}>
-              <li>
-                <NavLink
-                  to={`/host/vans/${id}`}
-                  end
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.navLink} ${styles.navLinkActive}`
-                      : styles.navLink
-                  }>
-                  Details
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`/host/vans/${id}/pricing`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.navLink} ${styles.navLinkActive}`
-                      : styles.navLink
-                  }>
-                  Pricing
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to={`/host/vans/${id}/photos`}
-                  className={({ isActive }) =>
-                    isActive
-                      ? `${styles.navLink} ${styles.navLinkActive}`
-                      : styles.navLink
-                  }>
-                  Photos
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
-          <Outlet />
-        </div>
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
     </div>
   );

@@ -1,9 +1,12 @@
+import { useOutletContext } from 'react-router-dom';
 import styles from './SmallPricing.module.css';
 
 const SmallPricing = () => {
+  const [vanData] = useOutletContext();
+
   return (
     <p className={styles.smallPricing}>
-      $60.00<small>/day</small>
+      ${vanData.price}<small>/day</small>
     </p>
   );
 };

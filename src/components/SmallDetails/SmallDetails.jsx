@@ -1,19 +1,18 @@
+import { useOutletContext } from 'react-router-dom';
 import styles from './SmallDetails.module.css';
 
 const SmallDetails = () => {
+  const [vanData] = useOutletContext();
   return (
     <div className={styles.smallDetails}>
       <p>
-        <b>Name:</b> Modest Explorer
+        <b>Name:</b> {vanData.name}
       </p>
       <p>
-        <b>Category:</b> Simple
+        <b>Category:</b> {vanData.type}
       </p>
       <p>
-        <b>Description:</b> The Modest Explorer is a van designed to get you out
-        of the house and into nature. This beauty is equipped with solar panels,
-        a composting toilet, a water tank and kitchenette. The idea is that you
-        can pack up your home and escape for a weekend or even longer!
+        <b>Description:</b> {vanData.description}
       </p>
       <p>
         <b>Visibility:</b> Public
