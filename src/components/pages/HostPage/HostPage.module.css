@@ -20,7 +20,7 @@
   font-weight: 600;
   line-height: 22px;
   text-decoration: none;
-  color: #4D4D4D;
+  color: #4d4d4d;
   transition: color 0.5s;
 }
 .navLink:hover {
@@ -33,10 +33,17 @@
   left: 0px;
   width: 0%;
   height: 1px;
-  background-color: #4D4D4D;
+  background-color: #4d4d4d;
   transition: color 0.5s, width 0.3s;
 }
 .navLink:hover::after {
+  width: 100%;
+  background-color: #161616;
+}
+.navLinkActive {
+  color: #161616;
+}
+.navLinkActive::after {
   width: 100%;
   background-color: #161616;
 }

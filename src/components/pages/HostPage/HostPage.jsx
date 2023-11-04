@@ -8,22 +8,47 @@ const HostPage = () => {
       <nav className={styles.navContainer}>
         <ul className={styles.nav}>
           <li>
-            <NavLink to="/host" className={styles.navLink}>
+            <NavLink
+              to="/host"
+              end
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.navLink} ${styles.navLinkActive}`
+                  : styles.navLink
+              }>
               Dashboard
             </NavLink>
           </li>
           <li>
-            <NavLink to="/host/income" className={styles.navLink}>
+            <NavLink
+              to="/host/income"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.navLink} ${styles.navLinkActive}`
+                  : styles.navLink
+              }>
               Income
             </NavLink>
           </li>
           <li>
-            <NavLink to="/host/vans" className={styles.navLink}>
+            <NavLink
+              to="/host/vans"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.navLink} ${styles.navLinkActive}`
+                  : styles.navLink
+              }>
               Vans
             </NavLink>
           </li>
           <li>
-            <NavLink to="/host/reviews" className={styles.navLink}>
+            <NavLink
+              to="/host/reviews"
+              className={({ isActive }) =>
+                isActive
+                  ? `${styles.navLink} ${styles.navLinkActive}`
+                  : styles.navLink
+              }>
               Reviews
             </NavLink>
           </li>

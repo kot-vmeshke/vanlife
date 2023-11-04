@@ -26,20 +26,20 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/host" element={<HostPage />}>
+        <Route path="about" element={<AboutPage />} />
+        <Route path="host" element={<HostPage />}>
           <Route index element={<Dashboard />} />
-          <Route path="/host/income" element={<Income />} />
-          <Route path="/host/reviews" element={<Reviews />} />
-          <Route path="/host/vans" element={<HostVans />} />
-          <Route path="/host/vans/:id" element={<HostVanDetails />}>
+          <Route path="income" element={<Income />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="vans" element={<HostVans />} />
+          <Route path="vans/:id" element={<HostVanDetails />}>
             <Route index element={<SmallDetails />} />
-            <Route path="/host/vans/:id/pricing" element={<SmallPricing />} />
-            <Route path="/host/vans/:id/photos" element={<SmallPhotos />} />
+            <Route path="pricing" element={<SmallPricing />} />
+            <Route path="photos" element={<SmallPhotos />} />
           </Route>
         </Route>
-        <Route path="/vans" element={<VansPage />} />
-        <Route path="/vans/:id" element={<VanDetails />} />
+        <Route path="vans" element={<VansPage />} />
+        <Route path="vans/:id" element={<VanDetails />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -111,3 +111,10 @@
   width: 100%;
   background-color: #161616;
 }
+.navLinkActive {
+  color: #161616;
+}
+.navLinkActive::after {
+  width: 100%;
+  background-color: #161616;
+}

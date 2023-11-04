@@ -36,21 +36,36 @@ const HostVanDetails = () => {
           <nav>
             <ul className={styles.nav}>
               <li>
-                <NavLink to={`/host/vans/${id}`} className={styles.navLink}>
+                <NavLink
+                  to={`/host/vans/${id}`}
+                  end
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.navLink} ${styles.navLinkActive}`
+                      : styles.navLink
+                  }>
                   Details
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to={`/host/vans/${id}/pricing`}
-                  className={styles.navLink}>
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.navLink} ${styles.navLinkActive}`
+                      : styles.navLink
+                  }>
                   Pricing
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   to={`/host/vans/${id}/photos`}
-                  className={styles.navLink}>
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${styles.navLink} ${styles.navLinkActive}`
+                      : styles.navLink
+                  }>
                   Photos
                 </NavLink>
               </li>

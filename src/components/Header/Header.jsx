@@ -8,13 +8,32 @@ const Header = () => {
         #VANLIFE
       </Link>
       <nav className={styles.nav}>
-        <NavLink to="/host" className={styles.navLink}>
+        <NavLink
+          to="/host"
+          end
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.navLink} ${styles.navLinkActive}`
+              : styles.navLink
+          }>
           Host
         </NavLink>
-        <NavLink to="/about" className={styles.navLink}>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.navLink} ${styles.navLinkActive}`
+              : styles.navLink
+          }>
           About
         </NavLink>
-        <NavLink to="/vans" className={styles.navLink}>
+        <NavLink
+          to="/vans"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.navLink} ${styles.navLinkActive}`
+              : styles.navLink
+          }>
           Vans
         </NavLink>
       </nav>
@@ -22,4 +41,4 @@ const Header = () => {
   );
 };
 
-export {Header};
+export { Header };
