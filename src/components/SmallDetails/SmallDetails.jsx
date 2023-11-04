@@ -2,7 +2,7 @@ import { useOutletContext } from 'react-router-dom';
 import styles from './SmallDetails.module.css';
 
 const SmallDetails = () => {
-  const [vanData] = useOutletContext();
+  const { vanData } = useOutletContext();
   return (
     <div className={styles.smallDetails}>
       <p>

@@ -16,7 +16,7 @@ const HostVanDetails = () => {
   return (
     <div>
       <div className={styles.container}>
-        <Link to="/host/vans" className={styles.backLink}>
+        <Link to=".." relative="path" className={styles.backLink}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
@@ -51,7 +51,7 @@ const HostVanDetails = () => {
               <ul className={styles.nav}>
                 <li>
                   <NavLink
-                    to={`/host/vans/${id}`}
+                    to={`.`}
                     end
                     className={({ isActive }) =>
                       isActive
@@ -63,7 +63,7 @@ const HostVanDetails = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={`/host/vans/${id}/pricing`}
+                    to={`pricing`}
                     className={({ isActive }) =>
                       isActive
                         ? `${styles.navLink} ${styles.navLinkActive}`
@@ -74,7 +74,7 @@ const HostVanDetails = () => {
                 </li>
                 <li>
                   <NavLink
-                    to={`/host/vans/${id}/photos`}
+                    to={`photos`}
                     className={({ isActive }) =>
                       isActive
                         ? `${styles.navLink} ${styles.navLinkActive}`
@@ -85,7 +85,7 @@ const HostVanDetails = () => {
                 </li>
               </ul>
             </nav>
-            <Outlet context={[vanData]}/>
+            <Outlet context={{vanData}} />
           </div>
         ) : (
           <p>Loading...</p>

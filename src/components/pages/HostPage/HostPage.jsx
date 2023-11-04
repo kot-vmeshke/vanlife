@@ -9,7 +9,7 @@ const HostPage = () => {
         <ul className={styles.nav}>
           <li>
             <NavLink
-              to="/host"
+              to="."
               end
               className={({ isActive }) =>
                 isActive
@@ -21,7 +21,7 @@ const HostPage = () => {
           </li>
           <li>
             <NavLink
-              to="/host/income"
+              to="income"
               className={({ isActive }) =>
                 isActive
                   ? `${styles.navLink} ${styles.navLinkActive}`
@@ -32,7 +32,7 @@ const HostPage = () => {
           </li>
           <li>
             <NavLink
-              to="/host/vans"
+              to="vans"
               className={({ isActive }) =>
                 isActive
                   ? `${styles.navLink} ${styles.navLinkActive}`
@@ -43,7 +43,7 @@ const HostPage = () => {
           </li>
           <li>
             <NavLink
-              to="/host/reviews"
+              to="reviews"
               className={({ isActive }) =>
                 isActive
                   ? `${styles.navLink} ${styles.navLinkActive}`
