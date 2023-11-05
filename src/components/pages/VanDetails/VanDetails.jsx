@@ -1,10 +1,12 @@
 import styles from './VanDetails.module.css';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
 const VanDetails = () => {
   const { id } = useParams();
+  const location = useLocation();
+  console.log(location);
   const [vanData, setVanData] = useState({});
 
   useEffect(() => {
@@ -15,11 +17,17 @@ const VanDetails = () => {
       });
   }, [id]);
 
+  const search = location.state?.search || '';
+  const string = location.state?.type || 'all';
+
   return (
     <div className={styles.van}>
       {vanData ? (
         <>
-          <Link to="/vans" className={styles.backlink}>
+          <Link
+            to={`..?${search}`}
+            relative="path"
+            className={styles.backlink}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -31,7 +39,7 @@ const VanDetails = () => {
                 fill="#858585"
               />
             </svg>
-            Back to all vans
+            Back to {string} vans
           </Link>
           <div className={styles.vanImgWrapper}>
             <img src={vanData.imageUrl} alt="" />

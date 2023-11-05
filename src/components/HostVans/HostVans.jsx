@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 const Van = ({ name, price, imageUrl, id }) => {
   return (
-    <Link to={`/host/vans/${id}`} className={styles.vanCard}>
+    <Link to={id} className={styles.vanCard}>
       <div className={styles.vanImgWrap}>
         <img src={imageUrl} alt="" />
       </div>

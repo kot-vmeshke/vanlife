@@ -19,13 +19,14 @@ import { HostVanDetails } from '../HostVanDetails/HostVanDetails';
 import { SmallDetails } from '../SmallDetails/SmallDetails';
 import { SmallPhotos } from '../SmallPhotos/SmallPhotos';
 import { SmallPricing } from '../SmallPricing/SmallPricing';
+import { NotFound } from '../pages/NotFound/NotFound';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />}/>
         <Route path="about" element={<AboutPage />} />
         <Route path="host" element={<HostPage />}>
           <Route index element={<Dashboard />} />
@@ -40,6 +41,7 @@ const App = () => {
         </Route>
         <Route path="vans" element={<VansPage />} />
         <Route path="vans/:id" element={<VanDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

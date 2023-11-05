@@ -2,9 +2,9 @@
 import { Link } from 'react-router-dom';
 import styles from './VanCard.module.css';
 
-const VanCard = ({ name, type, price, imageUrl, id }) => {
+const VanCard = ({ name, type, price, imageUrl, id, state }) => {
   return (
-    <Link to={`/vans/${id}`} className={styles.van}>
+    <Link to={id} className={styles.van} state={state}>
       <div className={styles.vanImgWrapper}>
         <img src={imageUrl} alt={name} />
       </div>

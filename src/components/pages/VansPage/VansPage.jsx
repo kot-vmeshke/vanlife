@@ -2,9 +2,12 @@ import styles from './VansPage.module.css';
 
 import { VanCard } from '../../VanCard/VanCard';
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const VansPage = () => {
   const [vansList, setVansList] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const typeFilter = searchParams.get('type');
 
   useEffect(() => {
     fetch('/api/vans')
@@ -15,19 +18,60 @@ const VansPage = () => {
       });
   }, []);
 
+  const vansFiltered = typeFilter
+    ? vansList.filter(
+        (item) => item.type.toLowerCase() === typeFilter.toLowerCase()
+      )
+    : vansList;
+
+  function handleFilterChange(key, value) {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  }
+
   return (
     <div className={styles.vans}>
       <div className={styles.vansContainer}>
         <h2 className={styles.vansTitle}>Explore our van options</h2>
         <ul className={styles.vansControls}>
-          <li className={styles.vansFilter}>Simple</li>
-          <li className={styles.vansFilter}>Luxury</li>
-          <li className={styles.vansFilter}>Rugged</li>
-          <li className={styles.vansClearFilter}>Clear filters</li>
+          <button
+            onClick={() => handleFilterChange('type', 'simple')}
+            className={`${styles.vansFilter} ${styles.simple} ${
+              typeFilter === 'simple' ? styles.selected : null
+            }`}>
+            Simple
+          </button>
+          <button
+            onClick={() => handleFilterChange('type', 'luxury')}
+            className={`${styles.vansFilter} ${styles.luxury} ${
+              typeFilter === 'luxury' ? styles.selected : null
+            }`}>
+            Luxury
+          </button>
+          <button
+            onClick={() => handleFilterChange('type', 'rugged')}
+            className={`${styles.vansFilter} ${styles.rugged} ${
+              typeFilter === 'rugged' ? styles.selected : null
+            }`}>
+            Rugged
+          </button>
+          {typeFilter && (
+            <button
+              onClick={() => handleFilterChange('type', null)}
+              className={styles.vansClearFilter}>
+              Clear filters
+            </button>
+          )}
         </ul>
         <div className={styles.vansList}>
-          {vansList.length ? (
-            vansList.map((item) => <VanCard key={item.id} {...item} />)
+          {vansFiltered.length ? (
+            vansFiltered.map((item) => <VanCard key={item.id} {...item} state={{search: searchParams.toString(), type: typeFilter}}/>)
           ) : (
             <p>Loading...</p>
           )}
