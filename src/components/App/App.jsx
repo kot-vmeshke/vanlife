@@ -8,7 +8,7 @@ import {
 import { HomePage } from '../pages/HomePage/HomePage';
 import { AboutPage } from '../pages/AboutPage/AboutPage';
 import { HostPage } from '../pages/HostPage/HostPage';
-import { VansPage } from '../pages/VansPage/VansPage';
+import { VansPage, loader} from '../pages/VansPage/VansPage';
 
 import '../../server/server';
 
@@ -24,6 +24,7 @@ import { SmallPhotos } from '../SmallPhotos/SmallPhotos';
 import { SmallPricing } from '../SmallPricing/SmallPricing';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { Layout } from '../pages/Layout/Layout';
+import { Error } from '../Error/Error';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -41,7 +42,7 @@ const router = createBrowserRouter(
           <Route path="photos" element={<SmallPhotos />} />
         </Route>
       </Route>
-      <Route path="vans" element={<VansPage />} />
+      <Route path="vans" element={<VansPage />} loader={loader} errorElement={<Error/>}/>
       <Route path="vans/:id" element={<VanDetails />} />
       <Route path="*" element={<NotFound />} />
     </Route>

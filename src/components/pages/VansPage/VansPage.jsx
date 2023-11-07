@@ -1,22 +1,20 @@
 import styles from './VansPage.module.css';
 
 import { VanCard } from '../../VanCard/VanCard';
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useLoaderData } from 'react-router-dom';
 
-const VansPage = () => {
-  const [vansList, setVansList] = useState([]);
+import { getVans } from '../../../server/api';
+
+export const loader = () => {
+  return getVans();
+};
+
+export const VansPage = () => {
+
   const [searchParams, setSearchParams] = useSearchParams();
   const typeFilter = searchParams.get('type');
 
-  useEffect(() => {
-    fetch('/api/vans')
-      .then((res) => res.json())
-      .then((data) => {
-        const { vans } = data;
-        setVansList(vans);
-      });
-  }, []);
+  const vansList = useLoaderData();
 
   const vansFiltered = typeFilter
     ? vansList.filter(
@@ -71,7 +69,13 @@ const VansPage = () => {
         </ul>
         <div className={styles.vansList}>
           {vansFiltered.length ? (
-            vansFiltered.map((item) => <VanCard key={item.id} {...item} state={{search: searchParams.toString(), type: typeFilter}}/>)
+            vansFiltered.map((item) => (
+              <VanCard
+                key={item.id}
+                {...item}
+                state={{ search: searchParams.toString(), type: typeFilter }}
+              />
+            ))
           ) : (
             <p>Loading...</p>
           )}
@@ -80,5 +84,3 @@ const VansPage = () => {
     </div>
   );
 };
-
-export { VansPage };

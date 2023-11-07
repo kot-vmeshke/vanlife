@@ -6,7 +6,6 @@ import { useEffect } from 'react';
 const VanDetails = () => {
   const { id } = useParams();
   const location = useLocation();
-  console.log(location);
   const [vanData, setVanData] = useState({});
 
   useEffect(() => {
