@@ -25,6 +25,7 @@ import { SmallPricing } from '../SmallPricing/SmallPricing';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { Layout } from '../pages/Layout/Layout';
 import { Error } from '../Error/Error';
+import { Login } from '../Login/Login';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -44,6 +45,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="vans" element={<VansPage />} loader={loader} errorElement={<Error/>}/>
       <Route path="vans/:id" element={<VanDetails />} />
+      <Route path="login" element={<Login/>}/>
       <Route path="*" element={<NotFound />} />
     </Route>
   )

@@ -9,7 +9,7 @@ const Header = () => {
       </Link>
       <nav className={styles.nav}>
         <NavLink
-          to="/host"
+          to="host"
           className={({ isActive }) =>
             isActive
               ? `${styles.navLink} ${styles.navLinkActive}`
@@ -18,7 +18,7 @@ const Header = () => {
           Host
         </NavLink>
         <NavLink
-          to="/about"
+          to="about"
           className={({ isActive }) =>
             isActive
               ? `${styles.navLink} ${styles.navLinkActive}`
@@ -27,13 +27,22 @@ const Header = () => {
           About
         </NavLink>
         <NavLink
-          to="/vans"
+          to="vans"
           className={({ isActive }) =>
             isActive
               ? `${styles.navLink} ${styles.navLinkActive}`
               : styles.navLink
           }>
           Vans
+        </NavLink>
+        <NavLink
+          to="login"
+          className={({ isActive }) =>
+            isActive
+              ? `${styles.navLink} ${styles.navLinkActive}`
+              : styles.navLink
+          }>
+          <img src="images/user-circle.svg" alt="" width={24}/>
         </NavLink>
       </nav>
     </header>
