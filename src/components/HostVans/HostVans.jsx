@@ -1,7 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import styles from './HostVans.module.css';
-import { useEffect, useState } from 'react';
+import { getHostVans } from '../../server/api';
+import { requireAuth } from '../../utils/utils';
+
+export const loader = async () => {
+  await requireAuth();
+  return getHostVans();
+}
 
 const Van = ({ name, price, imageUrl, id }) => {
   return (
@@ -18,16 +24,8 @@ const Van = ({ name, price, imageUrl, id }) => {
 };
 
 const HostVans = () => {
-  const [vansList, setVansList] = useState([]);
-
-  useEffect(() => {
-    fetch('/api/host/vans')
-      .then((res) => res.json())
-      .then((data) => {
-        const { vans } = data;
-        setVansList(vans);
-      });
-  }, []);
+  const vansList = useLoaderData();
+  console.log(vansList);
 
   return (
     <div className={styles.vans}>
