@@ -59,3 +59,10 @@
   width: 100%;
   background-color: #161616;
 }
+.logout {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #4D4D4D;
+  border: 1px solid #4d4d4d;
+  background: transparent;
+}

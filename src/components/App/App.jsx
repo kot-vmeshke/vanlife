@@ -27,7 +27,7 @@ import { SmallPricing } from '../SmallPricing/SmallPricing';
 import { NotFound } from '../pages/NotFound/NotFound';
 import { Layout } from '../pages/Layout/Layout';
 import { Error } from '../Error/Error';
-import { Login } from '../Login/Login';
+import { Login, loader as loginLoader, action as loginAction } from '../Login/Login';
 
 import { requireAuth } from '../../utils/utils';
 
@@ -40,7 +40,12 @@ const router = createBrowserRouter(
     <Route path="/" element={<Layout />}>
       <Route index element={<HomePage />} />
       <Route path="about" element={<AboutPage />} />
-      <Route path="login" element={<Login />} />
+      <Route
+        path="login"
+        element={<Login />}
+        loader={loginLoader}
+        action={loginAction}
+      />
       <Route path="host" element={<HostPage />}>
         <Route index element={<Dashboard />} loader={privateRoutesLoader} />
         <Route

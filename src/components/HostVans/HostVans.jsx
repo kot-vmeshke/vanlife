@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { Link, useLoaderData } from 'react-router-dom';
 import styles from './HostVans.module.css';

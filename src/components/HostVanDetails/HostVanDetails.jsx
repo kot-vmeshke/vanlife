@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Link, NavLink, Outlet, useLoaderData } from 'react-router-dom';
 import styles from './HostVanDetails.module.css';
 

@@ -42,8 +42,13 @@ const Header = () => {
               ? `${styles.navLink} ${styles.navLinkActive}`
               : styles.navLink
           }>
-          <img src="images/user-circle.svg" alt="" width={24}/>
+          <img src="images/user-circle.svg" alt="" width={24} />
         </NavLink>
+        <button
+          className={styles.logout}
+          onClick={() => localStorage.removeItem('isLoggedIn')}>
+          Logout
+        </button>
       </nav>
     </header>
   );
