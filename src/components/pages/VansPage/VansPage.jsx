@@ -1,12 +1,12 @@
 import styles from './VansPage.module.css';
 
 import { VanCard } from '../../VanCard/VanCard';
-import { useSearchParams, useLoaderData } from 'react-router-dom';
+import { useSearchParams, useLoaderData, defer } from 'react-router-dom';
 
 import { getVans } from '../../../server/api';
 
 export const loader = () => {
-  return getVans();
+  return defer({vansList: getVans()});
 };
 
 export const VansPage = () => {

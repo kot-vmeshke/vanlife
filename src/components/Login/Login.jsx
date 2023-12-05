@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useLoaderData, Form, useActionData, useNavigation } from 'react-router-dom';
 import styles from './Login.module.css';
 import { loginUser } from '../../server/api';
